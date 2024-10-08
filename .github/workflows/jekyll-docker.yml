@@ -30,7 +30,7 @@ jobs:
       run: mvn -B package --file pom.xml
     - name: Deploy no EC2
       run: |
-            echo "${{secrets.KEY_EC2}}" >private_key && chmod 600 private_key
-            ssh -o StrictHostKeyChecking=no -i "private_key" ubuntu@ec2-3-228-221-47.compute-1.amazonaws.com "
+            echo "${{secrets.KEY}}" >private_key && chmod 600 private_key
+            ssh -o StrictHostKeyChecking=no -i "private_key" ubuntu@ec2-107-20-27-48.compute-1.amazonaws.com "
                       cd /var/html/Projeto_Flare &&
                       sudo git pull "
